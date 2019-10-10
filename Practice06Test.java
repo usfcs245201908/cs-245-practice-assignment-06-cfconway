@@ -17,7 +17,7 @@ public class Practice06Test {
 	}
 	
 	
-	public void clearData() {
+	public void clearData() throws Exception {
 		while (!queue.empty()) {
 			queue.dequeue();
 		}
@@ -27,7 +27,7 @@ public class Practice06Test {
 	}
 	
 	
-	public boolean isPalindrome(String item) {
+	public boolean isPalindrome(String item) throws Exception {
 		clearData();
 		for (int i = 0; i < item.length(); i++) {
 			String substring = item.substring(i, i+1).toLowerCase();
@@ -67,6 +67,7 @@ public class Practice06Test {
 			String second = "second";
 			queue.enqueue(first);
 			queue.enqueue(second);
+
 			if (queue.dequeue() == first && queue.dequeue() == second && queue.empty()) {
 				System.out.println("[+10%] Queue functions appear correct.");
 				grade += 10;
@@ -131,7 +132,8 @@ public class Practice06Test {
 			}
 		} catch (Exception e) {
 			// Do nothing
-		} finally {
+		}
+		 finally {
 			System.out.println("====================");
 			System.out.println("Grade for this assignment: " + grade + "%");
 		}
@@ -143,3 +145,4 @@ public class Practice06Test {
 	}
 
 }
+
